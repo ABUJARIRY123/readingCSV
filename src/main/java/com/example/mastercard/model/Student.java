@@ -1,11 +1,11 @@
-package com.example.mastercard;
+package com.example.mastercard.model;
 
 public class Student {
     private String student_id;
     private String subject;
     private Double total_percentage;
     private String grade;
-    private  String term;
+    private String term;
     private String class_and_section;
     private String submitted_by;
 

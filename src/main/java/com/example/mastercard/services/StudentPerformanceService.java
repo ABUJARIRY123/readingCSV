@@ -1,6 +1,6 @@
 package com.example.mastercard.services;
 
-import com.example.mastercard.Student;
+import com.example.mastercard.model.Student;
 import com.example.mastercard.model.PerformanceAnalysis;
 import com.opencsv.exceptions.CsvException;
 import org.springframework.beans.factory.annotation.Autowired;

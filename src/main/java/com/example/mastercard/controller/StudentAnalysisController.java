@@ -1,5 +1,6 @@
 package com.example.mastercard.controller;
 
+import com.example.mastercard.DTO.StudentRequest;
 import com.example.mastercard.services.StudentPerformanceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,18 +12,19 @@ public class StudentAnalysisController {
     @Autowired
     private StudentPerformanceService studentPerformanceService;
 
+
     @PostMapping("/analyze")
-    public ResponseEntity<String> analyzeStudentPerformance (
-            @RequestParam String csvFilePath,
-            @RequestParam(defaultValue = "C:\\Desktop\\performance") String outputDirectory){
-        String result = studentPerformanceService.proccessStudentPerformance(csvFilePath, outputDirectory);
+    public ResponseEntity<String> analyzeStudentPerformance(@RequestBody StudentRequest request) {
+        String result = studentPerformanceService.proccessStudentPerformance(
+                request.getCsvFilePath(), request.getOutputDirectory());
         return ResponseEntity.ok(result);
     }
 
+
     @GetMapping("/results")
     public ResponseEntity<String> analyzedWithDefaults() {
-    String defaultCsvPath = "C:\\dev\\results.csv";
-    String defaultOutputPath = "C:\\Desktop\\performance";
+    String defaultCsvPath = "C:\\Users\\BD\\Downloads\\results_rows.csv";
+    String defaultOutputPath = "C:\\Users\\BD\\OneDrive\\Desktop\\performance";
 
     String result = studentPerformanceService.proccessStudentPerformance(defaultCsvPath, defaultOutputPath);
     return ResponseEntity.ok(result);

@@ -1,6 +1,6 @@
 package com.example.mastercard.services;
 
-import com.example.mastercard.Student;
+import com.example.mastercard.model.Student;
 import com.example.mastercard.model.PerformanceAnalysis;
 import org.springframework.stereotype.Service;
 

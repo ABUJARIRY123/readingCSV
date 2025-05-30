@@ -23,7 +23,7 @@ public class StudentAnalysisController {
 
     @GetMapping("/results")
     public ResponseEntity<String> analyzedWithDefaults() {
-    String defaultCsvPath = "C:\\Users\\BD\\Downloads\\results_rows.csv";
+    String defaultCsvPath = "C:\\Users\\BD\\OneDrive\\Desktop\\results_rows.csv";
     String defaultOutputPath = "C:\\Users\\BD\\OneDrive\\Desktop\\performance";
 
     String result = studentPerformanceService.proccessStudentPerformance(defaultCsvPath, defaultOutputPath);
